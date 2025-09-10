@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Démo Flask + MySQL</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+    .ok { color: #0b9444; font-weight: 700; }
+    .err { color: #c62828; }
+    table { border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #ddd; padding: 8px 12px; }
+    th { background: #f6f8fa; }
+  </style>
+</head>
+<body>
+  <h1 class="ok">{{ message }}</h1>
+
+  {% if error %}
+    <p class="err">Erreur de connexion ou de lecture MySQL: {{ error }}</p>
+  {% else %}
+    <p>Votre page est parfaitement nanani : preuve de la connexion à la base ci-dessous.</p>
+
+    {% if rows and rows|length > 0 %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Info</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in rows %}
+            <tr>
+              <td>{{ r.id }}</td>
+              <td>{{ r.name }}</td>
+              <td>{{ r.info }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>Aucune donnée à afficher. Avez-vous exécuté <code>python db_init.py</code> ?</p>
+    {% endif %}
+  {% endif %}
+</body>
+</html>

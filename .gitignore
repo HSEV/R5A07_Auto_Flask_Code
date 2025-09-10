@@ -1,0 +1,16 @@
+# Environnement Python
+.venv/
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Environnement
+.env
+
+# Docker
+mysql_data/
+
+# macOS
+.DS_Store
