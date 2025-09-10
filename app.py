@@ -15,7 +15,7 @@ DB_CONFIG = {
 
 @app.route("/")
 def index():
-    message = "Notre page marche parfaitement"
+    message = "Notre page marche"
 
     # Connexion DB et lecture des données
     rows = []
@@ -34,4 +34,7 @@ def index():
     return render_template("index.html", message=message, rows=rows, error=error)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    host = os.getenv("FLASK_HOST", "127.0.0.1")
+    port = int(os.getenv("FLASK_PORT", "5000"))
+    debug = os.getenv("FLASK_DEBUG", "1") == "1"
+    app.run(host=host, port=port, debug=debug)
