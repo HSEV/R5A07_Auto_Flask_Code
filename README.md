@@ -4,6 +4,18 @@ Ce projet minimal crée une application Flask avec une seule route et une base M
 - "Votre page marche parfaitement vous avez reussi"
 - Quelques données extraites de la base MySQL pour prouver la connexion.
 
+## Objectif du projet (hébergé via Docker sur Linux)
+
+Ce projet sert d’exemple complet d’un service web Flask connecté à une base MySQL, prêt à être conteneurisé et déployé sur une distribution Linux (ex: Kali) avec Docker. Il illustre :
+- la persistance de données MySQL et leur affichage dans une page web,
+- l’orchestration multi-conteneurs (application + base) avec Docker Compose,
+- un pipeline CI pour construire et publier l’image sur Docker Hub,
+- un déploiement reproductible sur n’importe quelle VM Linux.
+
+En pratique, vous pouvez cloner le dépôt sur une VM Linux, exécuter `docker compose up -d` et obtenir immédiatement :
+- un conteneur MySQL initialisé (base, table, données d’exemple),
+- un conteneur Flask exposé sur le port 5000 qui affiche les données de la base.
+
 ## Structure
 - `app.py` — Application Flask.
 - `db_init.py` — Script d'initialisation (création BD, table, et insertion de données).
