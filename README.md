@@ -1,9 +1,5 @@
 # Mini-projet Flask + MySQL
 
-Ce projet minimal crée une application Flask avec une seule route et une base MySQL initialisée via un script Python. La page affiche :
-- "Votre page marche parfaitement vous avez reussi"
-- Quelques données extraites de la base MySQL pour prouver la connexion.
-
 ## Objectif du projet (hébergé via Docker sur Linux)
 
 Ce projet sert d’exemple complet d’un service web Flask connecté à une base MySQL, prêt à être conteneurisé et déployé sur une distribution Linux (ex: Kali) avec Docker. Il illustre :
