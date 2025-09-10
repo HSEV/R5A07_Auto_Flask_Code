@@ -15,7 +15,7 @@ DB_CONFIG = {
 
 @app.route("/")
 def index():
-    message = "Notre page marche parfaitement vous avez reussi"
+    message = "Notre page marche parfaitement"
 
     # Connexion DB et lecture des données
     rows = []
