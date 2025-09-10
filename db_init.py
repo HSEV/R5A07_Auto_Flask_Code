@@ -22,9 +22,9 @@ DML_INSERT = """
 INSERT INTO samples (name, info) VALUES (%s, %s)
 """
 SAMPLE_DATA = [
-    ("Alice", "Premier enregistrement"),
-    ("Bob", "Deuxième enregistrement"),
-    ("Charlie", "Troisième enregistrement")
+    ("Sevo", "Premier enregistrement"),
+    ("Thomas", "Deuxième enregistrement"),
+    ("William", "Troisième enregistrement")
 ]
 
 
