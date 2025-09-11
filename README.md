@@ -50,15 +50,18 @@ python db_init.py
 Prérequis: Docker Desktop (macOS/Windows) ou Docker Engine (Linux).
 
 ```bash
-# Construire et démarrer l’app + MySQL
+# Construire et démarrer l’app + MySQL (port 5000 par défaut)
 docker compose up -d --build
 
+# Changer le port hôte (expose 5001:5000)
+HOST_PORT=5001 docker compose up -d
+
 # Ouvrir l’app
-open http://127.0.0.1:5000  # macOS
+open http://127.0.0.1:5000  # macOS (ou 5001 si changé)
 # ou: xdg-open http://127.0.0.1:5000 # Linux
 ```
 
-Le service `web` attend que MySQL soit healthy, initialise la base (script `db_init.py`), puis lance Flask sur `0.0.0.0:5000`.
+Le service `web` attend que MySQL soit healthy, initialise la base (script `db_init.py`), puis lance Flask sur `0.0.0.0:5000`. Le port hôte est contrôlé par la variable `HOST_PORT` (défaut 5000).
 
 ## CI/CD: Build & Push sur Docker Hub
 
